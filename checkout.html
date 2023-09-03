@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Xip Xop - Checkout</title>
+</head>
+<body class="flex flex-col h-screen">
+  <header class="sticky text-xl top-0 flex bg-violet-950 px-8 py-4 justify-between shadow-slate-400 shadow-xl z-10">
+    <a href="/">
+      <img class="h-16" src="./assets/logo/xip-xop-logo.png" alt="Logo da Xip Xop">
+    </a>
+    <div class="text-slate-200 flex gap-2 items-end mx-2">
+    </div>
+  </header>
+  <form class="flex w-100 px-5 py-10 gap-4 grow">
+    <section id="dados-usuario" class="w-1/3 bg-white rounded-lg py-5">
+      <p class="mb-5 text-center font-bold">Seus Dados</p>
+
+      <div class="flex flex-col px-10 py-3">
+        <label for="nome" class="font-bold text-sm mb-2">Nome</label>
+        <input type="text" id="nome" class="roundex-sm px-2 border-2 border-slate-200 py-1" placeholder="João Pinheiro" required>
+      </div>
+
+      <div class="flex flex-col px-10 py-3">
+        <label for="email" class="font-bold text-sm mb-2">Email</label>
+        <input type="email" id="email" class="roundex-sm px-2 border-2 border-slate-200 py-1" placeholder="joao.pinheiro@gmail.com" required>
+      </div>
+
+      <div class="flex flex-col px-10 py-3">
+        <label for="telefone" class="font-bold text-sm mb-2">Telefone de Contato</label>
+        <input type="tel" id="telefone" class="roundex-sm px-2 border-2 border-slate-200 py-1" placeholder="(98) 99888-7766" required>
+      </div>
+    </section>
+
+    <section id="pagamento-entrega" class="w-1/3 bg-white rounded-lg py-5">
+
+      <p class="mb-5 text-center font-bold">Pagamento e Entrega</p>
+
+      <div class="flex flex-col px-10 py-3">
+        <label for="numero-cartao" class="font-bold text-sm mb-2">Número do Cartão</label>
+        <input type="text" id="numero-cartao" class="roundex-sm px-2 border-2 border-slate-200 py-1" placeholder="1111 1111 1111 1111" required>
+      </div>
+
+      <div class="flex">
+
+        <div class="flex flex-col px-10 py-3 w-1/2">
+          <label for="cvv" class="font-bold text-sm mb-2">CVV</label>
+          <input type="number" id="cvv" class="roundex-sm px-2 border-2 border-slate-200 py-1" placeholder="222" required>
+        </div>
+
+        <div class="flex flex-col px-10 py-3 w-1/2">
+          <label for="data-expiracao" class="font-bold text-sm mb-2">Data de Validade</label>
+          <input type="text" id="data-expiracao" class="roundex-sm px-2 border-2 border-slate-200 py-1" placeholder="10/24" required>
+        </div>
+
+      </div>
+
+      <div class="flex flex-col px-10 py-3">
+        <label for="cep" class="font-bold text-sm mb-2">CEP</label>
+        <input type="text" id="cep" class="roundex-sm px-2 border-2 border-slate-200 py-1" placeholder="11122-333" required>
+      </div>
+
+      <div class="flex flex-col px-10 py-3">
+        <label for="endereco" class="font-bold text-sm mb-2">Endereço</label>
+        <input type="text" id="endereco" class="roundex-sm px-2 border-2 border-slate-200 py-1" placeholder="Rua que sobe e desce" required>
+      </div>
+
+      <div class="flex">
+
+        <div class="flex flex-col px-10 py-3 w-1/2">
+          <label for="numero" class="font-bold text-sm mb-2">Número</label>
+          <input type="number" id="numero" class="roundex-sm px-2 border-2 border-slate-200 py-1" placeholder="555" required>
+        </div>
+
+        <div class="flex flex-col px-10 py-3 w-1/2">
+          <label for="complemento" class="font-bold text-sm mb-2">Complemento</label>
+          <input type="text" id="complemento" class="roundex-sm px-2 border-2 border-slate-200 py-1" placeholder="Quadra quadrada" required>
+        </div>
+
+      </div>
+
+    </section>
+    <section id="produtos-checkout" class="w-1/3 bg-white rounded-lg py-5 flex flex-col gap-2">
+      <section id="container-produtos-checkout" class="h-4/5 overflow-y-auto px-2"></section>
+      <section id="celula-checkout" class="h-1/5">
+        <div class="flex flex-col gap-2 px-2">
+          <div class="flex text-xl font-bold text-green-800 bg-slate-200 rounded-sm p-2">
+            <p class="mx-1">Total: </p>
+            <p id="preco-total" class="">R$0.00</p>
+          </div>
+          <button class="bg-slate-900 text-slate-200 hover:bg-slate-800 p-1" type="submit">Finalizar Compra</button>
+        </div>
+      </section>
+    </section>
+  </form>
+  <script src="checkout.js" type="module"></script>
+</body>
+</html>
